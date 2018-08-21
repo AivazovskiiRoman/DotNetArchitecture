@@ -1,0 +1,24 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./",
+        "declaration": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [ "esnext", "dom" ],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "outDir": "./dist/out-tsc",
+        "pretty": true,
+        "removeComments": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "target": "esnext",
+        "typeRoots": [ "node_modules/@types" ]
+    },
+    "exclude": [ "node_modules" ]
+}

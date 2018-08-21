@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+    dotnetarchitecture_mssqlserver:
+       image: microsoft/mssql-server-linux
+       container_name: dotnetarchitecture_mssqlserver
+       environment:
+           ACCEPT_EULA: Y
+           SA_PASSWORD: "P4ss-W0rd!"
+       ports:
+           - 1433:1433
+    dotnetarchitecture_web:
+        build:
+            context: .
+            dockerfile: dockerfile
+            args:
+                ANGULAR_ENVIRONMENT: container
+                ASPNETCORE_ENVIRONMENT: Container
+        container_name: dotnetarchitecture_web
+        depends_on:
+            - dotnetarchitecture_mssqlserver
+        ports:
+            - 8080:80
